@@ -1,0 +1,211 @@
+paths:
+  /api/v1/admin:
+    get:
+      tags:
+        - Admins
+      summary: Get all admins
+      description: Retrieve a list of all admins
+      responses:
+        '200':
+          description: A list of admins
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Admin'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    
+    post:
+      tags:
+        - Admins
+      summary: Create a new admin
+      description: Create a new admin with the provided information
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdminInput'
+      responses:
+        '201':
+          description: Admin created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Admin'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /api/v1/admin/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Admin ID
+    
+    get:
+      tags:
+        - Admins
+      summary: Get admin by ID
+      description: Retrieve a specific admin by their ID
+      responses:
+        '200':
+          description: Admin details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Admin'
+        '404':
+          description: Admin not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    
+    put:
+      tags:
+        - Admins
+      summary: Update admin
+      description: Update an existing admin's information
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdminInput'
+      responses:
+        '200':
+          description: Admin updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Admin'
+        '404':
+          description: Admin not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    
+    delete:
+      tags:
+        - Admins
+      summary: Delete admin
+      description: Delete an admin by their ID
+      responses:
+        '200':
+          description: Admin deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Admin deleted successfully
+        '404':
+          description: Admin not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /api/v1/admin/role/{role}:
+    parameters:
+      - name: role
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Admin role
+    
+    get:
+      tags:
+        - Admins
+      summary: Get admins by role
+      description: Retrieve all admins with a specific role
+      responses:
+        '200':
+          description: List of admins with the specified role
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Admin'
+        '404':
+          description: No admins found with the specified role
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+components:
+  schemas:
+    Admin:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The auto-generated id of the admin
+        name:
+          type: string
+          description: The name of the admin
+        email:
+          type: string
+          format: email
+          description: The email of the admin
+        role:
+          type: string
+          description: The role of the admin
+        created_at:
+          type: string
+          format: date-time
+          description: The creation timestamp
+        updated_at:
+          type: string
+          format: date-time
+          description: The last update timestamp
+      required:
+        - name
+        - email
+        - role
+
+    AdminInput:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the admin
+        email:
+          type: string
+          format: email
+          description: The email of the admin
+        role:
+          type: string
+          description: The role of the admin
+      required:
+        - name
+        - email
+        - role
+
+    Error:
+      type: object
+      properties:
+        message:
+          type: string
+          description: Error message
+      required:
+        - message 

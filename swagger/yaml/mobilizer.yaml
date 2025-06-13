@@ -1,0 +1,211 @@
+paths:
+  /api/v1/mobilizers:
+    get:
+      tags:
+        - Mobilizers
+      summary: Get all mobilizers
+      description: Retrieve a list of all mobilizers
+      responses:
+        '200':
+          description: A list of mobilizers
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Mobilizer'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    
+    post:
+      tags:
+        - Mobilizers
+      summary: Create a new mobilizer
+      description: Create a new mobilizer with the provided information
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MobilizerInput'
+      responses:
+        '201':
+          description: Mobilizer created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Mobilizer'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /api/v1/mobilizers/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Mobilizer ID
+    
+    get:
+      tags:
+        - Mobilizers
+      summary: Get mobilizer by ID
+      description: Retrieve a specific mobilizer by their ID
+      responses:
+        '200':
+          description: Mobilizer details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Mobilizer'
+        '404':
+          description: Mobilizer not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    
+    put:
+      tags:
+        - Mobilizers
+      summary: Update mobilizer
+      description: Update an existing mobilizer's information
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MobilizerInput'
+      responses:
+        '200':
+          description: Mobilizer updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Mobilizer'
+        '404':
+          description: Mobilizer not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    
+    delete:
+      tags:
+        - Mobilizers
+      summary: Delete mobilizer
+      description: Delete a mobilizer by their ID
+      responses:
+        '200':
+          description: Mobilizer deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Mobilizer deleted successfully
+        '404':
+          description: Mobilizer not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /api/v1/mobilizers/region/{region}:
+    parameters:
+      - name: region
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Region name
+    
+    get:
+      tags:
+        - Mobilizers
+      summary: Get mobilizers by region
+      description: Retrieve all mobilizers in a specific region
+      responses:
+        '200':
+          description: List of mobilizers in the region
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Mobilizer'
+        '404':
+          description: No mobilizers found in the region
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+components:
+  schemas:
+    Mobilizer:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The auto-generated id of the mobilizer
+        name:
+          type: string
+          description: The name of the mobilizer
+        email:
+          type: string
+          format: email
+          description: The email of the mobilizer
+        region:
+          type: string
+          description: The region assigned to the mobilizer
+        created_at:
+          type: string
+          format: date-time
+          description: The creation timestamp
+        updated_at:
+          type: string
+          format: date-time
+          description: The last update timestamp
+      required:
+        - name
+        - email
+        - region
+
+    MobilizerInput:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the mobilizer
+        email:
+          type: string
+          format: email
+          description: The email of the mobilizer
+        region:
+          type: string
+          description: The region assigned to the mobilizer
+      required:
+        - name
+        - email
+        - region
+
+    Error:
+      type: object
+      properties:
+        message:
+          type: string
+          description: Error message
+      required:
+        - message 

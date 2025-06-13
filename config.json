@@ -1,0 +1,13 @@
+{
+    "database": {
+        "host": "localhost",
+        "user": "root",
+        "password": "",
+        "database": "mobilization_db",
+        "connectionLimit": 10
+    },
+    "jwt": {
+        "secret": "your-secret-key",
+        "expiresIn": "24h"
+    }
+} 

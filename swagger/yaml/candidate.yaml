@@ -1,0 +1,173 @@
+paths:
+  /api/v1/candidates:
+    get:
+      tags:
+        - Candidates
+      summary: Get all candidates
+      description: Retrieve a list of all candidates
+      responses:
+        '200':
+          description: A list of candidates
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Candidate'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    
+    post:
+      tags:
+        - Candidates
+      summary: Create a new candidate
+      description: Create a new candidate with the provided information
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CandidateInput'
+      responses:
+        '201':
+          description: Candidate created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Candidate'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /api/v1/candidates/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Candidate ID
+    
+    get:
+      tags:
+        - Candidates
+      summary: Get candidate by ID
+      description: Retrieve a specific candidate by their ID
+      responses:
+        '200':
+          description: Candidate details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Candidate'
+        '404':
+          description: Candidate not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    
+    put:
+      tags:
+        - Candidates
+      summary: Update candidate
+      description: Update an existing candidate's information
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CandidateInput'
+      responses:
+        '200':
+          description: Candidate updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Candidate'
+        '404':
+          description: Candidate not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    
+    delete:
+      tags:
+        - Candidates
+      summary: Delete candidate
+      description: Delete a candidate by their ID
+      responses:
+        '200':
+          description: Candidate deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Candidate deleted successfully
+        '404':
+          description: Candidate not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+components:
+  schemas:
+    Candidate:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The auto-generated id of the candidate
+        name:
+          type: string
+          description: The name of the candidate
+        email:
+          type: string
+          format: email
+          description: The email of the candidate
+        created_at:
+          type: string
+          format: date-time
+          description: The creation timestamp
+        updated_at:
+          type: string
+          format: date-time
+          description: The last update timestamp
+      required:
+        - name
+        - email
+
+    CandidateInput:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the candidate
+        email:
+          type: string
+          format: email
+          description: The email of the candidate
+      required:
+        - name
+        - email
+
+    Error:
+      type: object
+      properties:
+        message:
+          type: string
+          description: Error message
+      required:
+        - message 
