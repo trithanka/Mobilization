@@ -8,28 +8,44 @@ const YAML = require('yamljs');
 const path = require('path');
 const { logger } = require('./utils/logger');
 
+
+
 const app = express();
 
 // Middleware
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(morgan('combined', { stream: logger.stream }));
+
+// Custom Morgan format for API name and timestamp only
+morgan.token('api', (req) => req.path);
+app.use(morgan(':api [:date[iso]]', { stream: logger.stream }));
+
+app.get('/test-1', (req, res) => {
+  res.send('Hello, World!');
+});
+
 
 // Swagger documentation
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 // Import routes
-const candidateRouter = require('./v1/candidate/candidate.router');
-const mobilizerRouter = require('./v1/mobilizer/mobilizer.router');
+const masterRouter=require('./v1/master/router/master.router');
+const candidateRouter = require('./v1/candidate/candidateRouter/candidate.router');
+const mobilizerRouter = require('./v1/mobilizer/mobilizerRouter/mobilizer.router');
 const adminRouter = require('./v1/admin/router/admin.router');
 const authRoutes = require('./v1/auth/auth.routes');
 
 // Use routes
+app.use('v1/master',masterRouter);
 app.use('/v1/candidates', candidateRouter);
 app.use('/v1/mobilizers', mobilizerRouter);
 app.use('/v1/admin', adminRouter);
 app.use('/v1/auth', authRoutes);
+
+app.use('/v1/test', (req, res) => {
+  res.send('Hello, World!');
+});
 
 // Error handling middleware
 app.use((err, req, res, next) => {
@@ -41,7 +57,7 @@ app.use((err, req, res, next) => {
   });
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4343;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
   console.log(`Swagger documentation available at http://localhost:${PORT}/api-docs`);

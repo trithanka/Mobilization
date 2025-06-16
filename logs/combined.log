@@ -1,0 +1,46 @@
+{"level":"info","message":"::1 - - [14/Jun/2025:05:17:49 +0000] \"GET /api-docs HTTP/1.1\" 301 158 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36\"","service":"mobilization-service","timestamp":"2025-06-14 05:17:49"}
+{"level":"info","message":"::1 - - [14/Jun/2025:05:17:49 +0000] \"GET /api-docs/ HTTP/1.1\" 200 3106 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36\"","service":"mobilization-service","timestamp":"2025-06-14 05:17:49"}
+{"level":"info","message":"::1 - - [14/Jun/2025:05:17:50 +0000] \"GET /api-docs/swagger-ui.css HTTP/1.1\" 200 154986 \"http://localhost:4343/api-docs/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36\"","service":"mobilization-service","timestamp":"2025-06-14 05:17:50"}
+{"level":"info","message":"::1 - - [14/Jun/2025:05:17:50 +0000] \"GET /api-docs/swagger-ui-standalone-preset.js HTTP/1.1\" 200 229223 \"http://localhost:4343/api-docs/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36\"","service":"mobilization-service","timestamp":"2025-06-14 05:17:50"}
+{"level":"info","message":"::1 - - [14/Jun/2025:05:17:50 +0000] \"GET /api-docs/swagger-ui-bundle.js HTTP/1.1\" 200 1485241 \"http://localhost:4343/api-docs/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36\"","service":"mobilization-service","timestamp":"2025-06-14 05:17:50"}
+{"level":"info","message":"::1 - - [14/Jun/2025:05:17:50 +0000] \"GET /api-docs/swagger-ui-init.js HTTP/1.1\" 200 25242 \"http://localhost:4343/api-docs/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36\"","service":"mobilization-service","timestamp":"2025-06-14 05:17:50"}
+{"level":"info","message":"::1 - - [14/Jun/2025:05:17:54 +0000] \"GET /api-docs/favicon-32x32.png HTTP/1.1\" 200 628 \"http://localhost:4343/api-docs/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36\"","service":"mobilization-service","timestamp":"2025-06-14 05:17:54"}
+{"level":"info","message":"/ [2025-06-14T05:19:29.600Z]","service":"mobilization-service","timestamp":"2025-06-14 05:19:29"}
+{"level":"info","message":"/swagger-ui.css [2025-06-14T05:19:29.761Z]","service":"mobilization-service","timestamp":"2025-06-14 05:19:29"}
+{"level":"info","message":"/swagger-ui-bundle.js [2025-06-14T05:19:29.826Z]","service":"mobilization-service","timestamp":"2025-06-14 05:19:29"}
+{"level":"info","message":"/swagger-ui-standalone-preset.js [2025-06-14T05:19:29.846Z]","service":"mobilization-service","timestamp":"2025-06-14 05:19:29"}
+{"level":"info","message":"/swagger-ui-init.js [2025-06-14T05:19:29.921Z]","service":"mobilization-service","timestamp":"2025-06-14 05:19:29"}
+{"level":"info","message":"/ [2025-06-14T07:50:33.569Z]","service":"mobilization-service","timestamp":"2025-06-14 07:50:33"}
+{"level":"info","message":"/swagger-ui.css [2025-06-14T07:50:33.880Z]","service":"mobilization-service","timestamp":"2025-06-14 07:50:33"}
+{"level":"info","message":"/swagger-ui-bundle.js [2025-06-14T07:50:33.889Z]","service":"mobilization-service","timestamp":"2025-06-14 07:50:33"}
+{"level":"info","message":"/swagger-ui-standalone-preset.js [2025-06-14T07:50:33.979Z]","service":"mobilization-service","timestamp":"2025-06-14 07:50:33"}
+{"level":"info","message":"/swagger-ui-init.js [2025-06-14T07:50:33.999Z]","service":"mobilization-service","timestamp":"2025-06-14 07:50:33"}
+{"level":"info","message":"/ [2025-06-14T07:52:01.517Z]","service":"mobilization-service","timestamp":"2025-06-14 07:52:01"}
+{"level":"info","message":"/favicon.ico [2025-06-14T07:52:01.720Z]","service":"mobilization-service","timestamp":"2025-06-14 07:52:01"}
+{"level":"info","message":"/ [2025-06-16T05:25:46.540Z]","service":"mobilization-service","timestamp":"2025-06-16 05:25:46"}
+{"level":"info","message":"/ [2025-06-16T05:25:46.806Z]","service":"mobilization-service","timestamp":"2025-06-16 05:25:46"}
+{"level":"info","message":"/swagger-ui.css [2025-06-16T05:25:47.200Z]","service":"mobilization-service","timestamp":"2025-06-16 05:25:47"}
+{"level":"info","message":"/swagger-ui-init.js [2025-06-16T05:25:47.840Z]","service":"mobilization-service","timestamp":"2025-06-16 05:25:47"}
+{"level":"info","message":"/swagger-ui-standalone-preset.js [2025-06-16T05:25:47.843Z]","service":"mobilization-service","timestamp":"2025-06-16 05:25:47"}
+{"level":"info","message":"/swagger-ui-bundle.js [2025-06-16T05:25:47.846Z]","service":"mobilization-service","timestamp":"2025-06-16 05:25:47"}
+{"level":"info","message":"/swagger-ui-init.js [2025-06-16T05:25:50.267Z]","service":"mobilization-service","timestamp":"2025-06-16 05:25:50"}
+{"level":"info","message":"/swagger-ui-standalone-preset.js [2025-06-16T05:25:50.393Z]","service":"mobilization-service","timestamp":"2025-06-16 05:25:50"}
+{"level":"info","message":"/favicon-32x32.png [2025-06-16T05:25:50.517Z]","service":"mobilization-service","timestamp":"2025-06-16 05:25:50"}
+{"level":"info","message":"/swagger-ui-bundle.js [2025-06-16T05:25:50.531Z]","service":"mobilization-service","timestamp":"2025-06-16 05:25:50"}
+{"level":"info","message":"/test-1 [2025-06-16T05:26:14.045Z]","service":"mobilization-service","timestamp":"2025-06-16 05:26:14"}
+{"level":"info","message":"/favicon.ico [2025-06-16T05:26:14.639Z]","service":"mobilization-service","timestamp":"2025-06-16 05:26:14"}
+{"level":"info","message":"/ [2025-06-16T05:40:21.396Z]","service":"mobilization-service","timestamp":"2025-06-16 05:40:21"}
+{"level":"info","message":"/ [2025-06-16T05:40:21.591Z]","service":"mobilization-service","timestamp":"2025-06-16 05:40:21"}
+{"level":"info","message":"/swagger-ui.css [2025-06-16T05:40:21.847Z]","service":"mobilization-service","timestamp":"2025-06-16 05:40:21"}
+{"level":"info","message":"/swagger-ui-bundle.js [2025-06-16T05:40:21.854Z]","service":"mobilization-service","timestamp":"2025-06-16 05:40:21"}
+{"level":"info","message":"/swagger-ui-init.js [2025-06-16T05:40:24.576Z]","service":"mobilization-service","timestamp":"2025-06-16 05:40:24"}
+{"level":"info","message":"/swagger-ui-standalone-preset.js [2025-06-16T05:40:24.577Z]","service":"mobilization-service","timestamp":"2025-06-16 05:40:24"}
+{"level":"info","message":"/favicon-32x32.png [2025-06-16T05:40:25.577Z]","service":"mobilization-service","timestamp":"2025-06-16 05:40:25"}
+{"level":"info","message":"/test-1 [2025-06-16T05:40:27.957Z]","service":"mobilization-service","timestamp":"2025-06-16 05:40:27"}
+{"level":"info","message":"/favicon.ico [2025-06-16T05:40:28.250Z]","service":"mobilization-service","timestamp":"2025-06-16 05:40:28"}
+{"level":"info","message":"/test-1 [2025-06-16T06:01:13.472Z]","service":"mobilization-service","timestamp":"2025-06-16 06:01:13"}
+{"level":"info","message":"/test-1/v1/authlogin [2025-06-16T06:02:04.623Z]","service":"mobilization-service","timestamp":"2025-06-16 06:02:04"}
+{"level":"info","message":"/v1/authlogin [2025-06-16T06:02:24.338Z]","service":"mobilization-service","timestamp":"2025-06-16 06:02:24"}
+{"level":"info","message":"/v1/authlogin [2025-06-16T06:07:31.145Z]","service":"mobilization-service","timestamp":"2025-06-16 06:07:31"}
+{"errorCode":"MISSING_FIELDS","level":"error","message":"Login name  and password are required","service":"mobilization-service","statusCode":400,"success":false,"timestamp":"2025-06-16 06:07:45"}
+{"level":"info","message":"/v1/auth/login [2025-06-16T06:07:45.950Z]","service":"mobilization-service","timestamp":"2025-06-16 06:07:45"}

@@ -1,12 +1,12 @@
 const authService = require('./auth.service');
-const { propagateError } = require('../../../utils/responseHandler');
+const { propagateError } = require('../../utils/responseHandler');
 
 const login = async (req, res, next) => {
     try {
-        const { email, password } = req.body;
+        const { loginName, password } = req.body;
 
-        if (!email || !password) {
-            throw propagateError(400, "MISSING_FIELDS", "Email and password are required");
+        if (!loginName || !password) {
+            throw propagateError(400, "MISSING_FIELDS", "Login name  and password are required");
         }
 
         const result = await authService.login(email, password);

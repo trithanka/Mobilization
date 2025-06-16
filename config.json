@@ -1,10 +1,11 @@
 {
-    "database": {
-        "host": "localhost",
+    "databaseMYSQL": {
+        "host": "127.0.0.1",
+        "port": "3306",
         "user": "root",
-        "password": "",
-        "database": "mobilization_db",
-        "connectionLimit": 10
+        "password": "password",
+        "database": "ds",
+        "connectionLimit": 100000
     },
     "jwt": {
         "secret": "your-secret-key",
