@@ -7,7 +7,7 @@ const swaggerJsdoc = require('swagger-jsdoc');
 const YAML = require('yamljs');
 const path = require('path');
 const { logger } = require('./utils/logger');
-
+require('dotenv').config();
 
 
 const app = express();

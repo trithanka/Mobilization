@@ -47,6 +47,68 @@ router.get('/:id', mobilizerController.getMobilizerById);
 
 /**
  * @swagger
+ * /v1/mobilizers/pkl/{pklEntityId}:
+ *   get:
+ *     summary: Get a mobilizer by pklEntityId
+ *     tags: [Mobilizers]
+ *     parameters:
+ *       - in: path
+ *         name: pklEntityId
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: The mobilizer pklEntityId
+ *     responses:
+ *       200:
+ *         description: The mobilizer description by pklEntityId
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Mobilizer'
+ *       404:
+ *         description: The mobilizer was not found
+ */
+router.get('/pkl/:pklEntityId', mobilizerController.getMobilizerByPklEntityId);
+
+/**
+ * @swagger
+ * /v1/mobilizers/{id}/status:
+ *   patch:
+ *     summary: Update mobilizer status
+ *     tags: [Mobilizers]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: The mobilizer id
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - status
+ *             properties:
+ *               status:
+ *                 type: boolean
+ *                 description: The new status of the mobilizer
+ *     responses:
+ *       200:
+ *         description: The mobilizer status was updated
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Mobilizer'
+ *       404:
+ *         description: The mobilizer was not found
+ */
+router.patch('/:id/status', mobilizerController.updateMobilizerStatus);
+
+/**
+ * @swagger
  * /v1/mobilizers:
  *   post:
  *     summary: Create a new mobilizer

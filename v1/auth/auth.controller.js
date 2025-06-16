@@ -9,8 +9,8 @@ const login = async (req, res, next) => {
             throw propagateError(400, "MISSING_FIELDS", "Login name  and password are required");
         }
 
-        const result = await authService.login(email, password);
-        res.status(result.statusCode).json(result);
+        const result = await authService.login(loginName, password);
+        res.status(result?.statusCode).json(result);
     } catch (error) {
         next(error);
     }
